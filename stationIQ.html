@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StationIQ Dashboard</title>
+   
+<link rel="stylesheet" href="/static/stationIQ.css">
+<script src="/static/stationIQScript.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/stationIQScript.js" defer></script>
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>StationIQ</h2>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Sales</a>
+            <a href="#">Fuel</a>
+            <a href="#">Inventory</a>
+            <a href="#">Expenses</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard">
+
+        <header>
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to StationIQ</p>
+            </div>
+
+            <select id="dateFilter">
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+        </header>
+
+        <section class="metrics">
+
+            <div class="card">
+                <h3>Total Sales</h3>
+                <h2 id="sales">$0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Gross Profit</h3>
+                <h2 id="profit">$0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Fuel Gallons</h3>
+                <h2 id="gallons">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Expenses</h3>
+                <h2 id="expenses">$0</h2>
+            </div>
+
+        </section>
+
+        
+<section class="charts">
+
+    <div class="card chart-card">
+        <h3>Sales Trend</h3>
+        <div class="chart-container">
+            <canvas id="salesChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card chart-card">
+        <h3>Gross Profit Breakdown</h3>
+        <div class="chart-container">
+            <canvas id="profitChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card chart-card">
+        <h3>Daily Fuel Volume</h3>
+        <div class="chart-container">
+            <canvas id="fuelChart"></canvas>
+        </div>mu
+    </div>
+
+</section>
+
+
+
+
+    </main>
+
+</body>
+</html>
