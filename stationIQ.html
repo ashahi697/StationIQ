@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>StationIQ Dashboard</title>
-   
-<link rel="stylesheet" href="/static/stationIQ.css">
-<script src="/static/stationIQScript.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/static/stationIQScript.js" defer></script>
+    <title>StationIQ | Sunset Fast Stop</title>
 
+    <link rel="stylesheet" href="/static/stationIQ.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/stationIQScript.js" defer></script>
 </head>
 
 <body>
@@ -30,18 +28,29 @@
 
     <main class="dashboard">
 
-        <header>
+        <header class="dashboard-header">
+
             <div>
                 <h1>Dashboard</h1>
                 <p>Welcome to StationIQ</p>
             </div>
 
-            <select id="dateFilter">
-                <option value="today">Today</option>
-                <option value="week">This Week</option>
-                <option value="month">This Month</option>
-            </select>
+            <div class="station-brand">
+                <img src="/static/shellLogo.png" alt="Shell Logo">
+
+                <div>
+                    <h3>Sunset Fast Stop</h3>
+                    <p>Shell Station</p>
+                </div>
+            </div>
+
         </header>
+
+        <select id="dateFilter">
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+        </select>
 
         <section class="metrics">
 
@@ -67,34 +76,30 @@
 
         </section>
 
-        
-<section class="charts">
+        <section class="charts">
 
-    <div class="card chart-card">
-        <h3>Sales Trend</h3>
-        <div class="chart-container">
-            <canvas id="salesChart"></canvas>
-        </div>
-    </div>
+            <div class="card chart-card">
+                <h3>Sales Trend</h3>
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
 
-    <div class="card chart-card">
-        <h3>Gross Profit Breakdown</h3>
-        <div class="chart-container">
-            <canvas id="profitChart"></canvas>
-        </div>
-    </div>
+            <div class="card chart-card">
+                <h3>Gross Profit Breakdown</h3>
+                <div class="chart-container">
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </div>
 
-    <div class="card chart-card">
-        <h3>Daily Fuel Volume</h3>
-        <div class="chart-container">
-            <canvas id="fuelChart"></canvas>
-        </div>mu
-    </div>
+            <div class="card chart-card">
+                <h3>Daily Fuel Volume</h3>
+                <div class="chart-container">
+                    <canvas id="fuelChart"></canvas>
+                </div>
+            </div>
 
-</section>
-
-
-
+        </section>
 
     </main>
 

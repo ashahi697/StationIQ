@@ -1,0 +1,11 @@
+
+{
+  "store": "StationIQ Demo Store",
+  "report_date": "2026-11-17",
+  "inside_sales": 3500,
+  "fuel_gallons": 3200,
+  "fuel_revenue": 9600,
+  "gross_profit": 1800,
+  "expenses": 750,
+  "transactions": 425
+}
