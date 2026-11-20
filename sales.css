@@ -1,80 +1,79 @@
 
 .sales-page {
     flex: 1;
-    min-width: 0;
-    padding: 30px 34px;
+    padding: 30px;
 }
 
 .sales-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 .sales-header h1 {
-    margin: 0 0 8px;
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
 .sales-header p {
-    margin: 0;
-    color: #8792a0;
+    color: gray;
+    font-size: 13px;
 }
 
 .sales-header img {
     width: 65px;
-    height: 65px;
-    object-fit: contain;
 }
 
 .sales-panel {
     background: white;
-    border: 1px solid #e5e9ee;
-    border-radius: 11px;
-    padding: 24px;
-    margin-bottom: 22px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .sales-panel h2 {
     font-size: 18px;
-    margin: 0 0 20px;
+    margin-bottom: 20px;
 }
 
 .sales-fields {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .sales-fields label {
     display: block;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 13px;
     margin-bottom: 8px;
 }
 
 .sales-fields input {
     width: 100%;
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
 }
 
 #salesForm button {
     background: #d52b1e;
     color: white;
+    padding: 12px 20px;
     border: none;
-    border-radius: 7px;
-    padding: 13px 20px;
-    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
     cursor: pointer;
-    margin-top: 22px;
-}
-
-#salesForm button:hover {
-    background: #b72117;
 }
 
 #salesMessage {
+    margin-top: 12px;
     font-size: 13px;
-    color: #247b49;
 }
 
 .table-wrap {
@@ -83,7 +82,6 @@
 
 .table-wrap table {
     width: 100%;
-    min-width: 650px;
     border-collapse: collapse;
 }
 
@@ -91,17 +89,12 @@
 .table-wrap td {
     padding: 14px;
     text-align: left;
-    border-bottom: 1px solid #e8edf2;
+    border-bottom: 1px solid lightgray;
+    font-size: 13px;
 }
 
 .table-wrap th {
-    background: #f7f8fa;
-    color: #6c7a8b;
-    font-size: 12px;
-}
-
-.table-wrap td {
-    font-size: 13px;
+    background: #f5f5f5;
 }
 
 @media (max-width: 800px) {
