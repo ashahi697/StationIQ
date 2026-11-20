@@ -1,0 +1,19 @@
+{
+    "sales": [
+        {
+            "id": 1,
+            "date": "2026-11-11",
+            "inside": 5000.0,
+            "fuel": 2800.0
+        }
+    ],
+    "fuel": [],
+    "inventory": [
+        {
+            "id": 1,
+            "name": "Takis",
+            "price": 3.49,
+            "cost": 2.5
+        }
+    ]
+}

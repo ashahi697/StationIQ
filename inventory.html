@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StationIQ | Inventory</title>
+
+    <link rel="stylesheet" href="/static/stationIQ.css">
+    <link rel="stylesheet" href="/static/inventory.css">
+    <script src="/static/inventory.js" defer></script>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>StationIQ</h2>
+
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/sales">Sales</a>
+            <a href="/fuel">Fuel</a>
+            <a href="/inventory" class="active">Inventory</a>
+            <a href="#">Expenses</a>
+        </nav>
+    </aside>
+
+    <main class="inventory-page">
+
+        <header class="inventory-header">
+            <div>
+                <h1>Inventory Management</h1>
+                <p>Sunset Fast Stop | Product Catalog</p>
+            </div>
+
+            <img src="/static/shellLogo.png" alt="Shell Logo">
+        </header>
+
+        <section class="inventory-summary">
+            <div class="inventory-stat">
+                <span>Total Products</span>
+                <h2 id="productCount">0</h2>
+            </div>
+
+            <div class="inventory-stat">
+                <span>Average Gross Margin</span>
+                <h2 id="averageProductMargin">0%</h2>
+            </div>
+        </section>
+
+        <section class="inventory-panel">
+
+            <div class="inventory-toolbar">
+                <div>
+                    <h2>Product Inventory</h2>
+                    <p>Add products and manage their prices and costs.</p>
+                </div>
+
+                <button id="addProductButton" type="button">
+                    + Add Product
+                </button>
+            </div>
+
+            <form id="inventoryForm" hidden>
+                <h3 id="inventoryFormTitle">New Product</h3>
+
+                <div class="inventory-fields">
+                    <div>
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName"
+                               placeholder="Coca-Cola 20 oz" required>
+                    </div>
+
+                    <div>
+                        <label for="productPrice">Selling Price ($)</label>
+                        <input type="number" id="productPrice"
+                               min="0" step="0.01"
+                               placeholder="2.49" required>
+                    </div>
+
+                    <div>
+                        <label for="productCost">Cost of Goods ($)</label>
+                        <input type="number" id="productCost"
+                               min="0" step="0.01"
+                               placeholder="1.35" required>
+                    </div>
+                </div>
+
+                <div class="inventory-preview">
+                    <div>
+                        <span>Gross Profit Per Unit</span>
+                        <strong id="productProfitPreview">$0.00</strong>
+                    </div>
+
+                    <div>
+                        <span>Gross Margin</span>
+                        <strong id="productMarginPreview">0%</strong>
+                    </div>
+                </div>
+
+                <div class="inventory-actions">
+                    <button type="submit" id="saveProductButton">
+                        Save Product
+                    </button>
+
+                    <button type="button" id="cancelProductButton">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+
+            <p id="inventoryMessage" role="status"></p>
+
+            <div class="inventory-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Selling Price</th>
+                            <th>Cost of Goods</th>
+                            <th>Gross Profit / Unit</th>
+                            <th>Gross Margin</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inventoryHistory"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

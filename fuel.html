@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StationIQ | Fuel Management</title>
+
+    <link rel="stylesheet" href="/static/stationIQ.css">
+    <link rel="stylesheet" href="/static/fuel.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/fuel.js" defer></script>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>StationIQ</h2>
+
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/sales">Sales</a>
+            <a href="/fuel" class="active">Fuel</a>
+            <a href="/inventory">Inventory</a>
+            <a href="#">Expenses</a>
+        </nav>
+    </aside>
+
+    <main class="fuel-page">
+
+        <header class="fuel-header">
+            <div>
+                <h1>Fuel Management</h1>
+                <p>Sunset Fast Stop | Fuel Pricing & Profitability</p>
+            </div>
+            <img src="/static/shellLogo.png" alt="Shell Logo">
+        </header>
+
+        <section class="fuel-metrics">
+            <div class="fuel-card">
+                <h3>Total Gallons Sold</h3>
+                <h2 id="totalGallons">0</h2>
+            </div>
+            <div class="fuel-card">
+                <h3>Fuel Revenue</h3>
+                <h2 id="totalRevenue">$0.00</h2>
+            </div>
+            <div class="fuel-card">
+                <h3>Fuel Gross Profit</h3>
+                <h2 id="totalFuelProfit">$0.00</h2>
+            </div>
+            <div class="fuel-card">
+                <h3>Average Margin / Gallon</h3>
+                <h2 id="averageMargin">$0.00</h2>
+            </div>
+        </section>
+
+        <section class="fuel-panel">
+            <h2>Add Fuel Entry</h2>
+            <p>Record one fuel grade at a time.</p>
+
+            <form id="fuelForm" novalidate>
+                <div class="fuel-form-grid">
+                    <div>
+                        <label for="fuelDate">Date</label>
+                        <input type="date" id="fuelDate">
+                    </div>
+
+                    <div>
+                        <label for="fuelGrade">Fuel Grade</label>
+                        <select id="fuelGrade">
+                            <option value="85">85 Regular</option>
+                            <option value="87">87 Midgrade</option>
+                            <option value="91">91 Premium</option>
+                            <option value="Diesel">Diesel</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="fuelPrice">Selling Price / Gallon ($)</label>
+                        <input type="number" id="fuelPrice"
+                               step="any"">
+                    </div>
+
+                    <div>
+                        <label for="fuelCost">Cost / Gallon ($)</label>
+                        <input type="number" id="fuelCost"
+                               step="any" ">
+                    </div>
+
+                    <div>
+                        <label for="fuelGallons">Gallons Sold</label>
+                        <input type="number" id="fuelGallons"
+                               step="any"   >
+                    </div>
+                </div>
+
+                <div class="fuel-preview">
+                    <div>
+                        <span>Margin Per Gallon</span>
+                        <h3 id="previewMargin">$0.00</h3>
+                    </div>
+                    <div>
+                        <span>Estimated Gross Profit</span>
+                        <h3 id="previewProfit">$0.00</h3>
+                    </div>
+                </div>
+
+                <button type="submit" id="saveFuelButton">
+                    Save Fuel Entry
+                </button>
+
+                <p id="fuelMessage" role="status"></p>
+            </form>
+        </section>
+
+        <section class="fuel-panel">
+            <h2>Fuel Profit by Grade</h2>
+            <p>Gross profit calculated from saved fuel records.</p>
+
+            <div class="fuel-chart-container">
+                <canvas id="fuelProfitChart"></canvas>
+            </div>
+        </section>
+
+        <section class="fuel-panel">
+            <h2>Fuel History</h2>
+            <p>Previously recorded fuel sales and margins.</p>
+
+            <div class="fuel-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Grade</th>
+                            <th>Price/Gal</th>
+                            <th>Cost/Gal</th>
+                            <th>Gallons</th>
+                            <th>Margin/Gal</th>
+                            <th>Gross Profit</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fuelHistory"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

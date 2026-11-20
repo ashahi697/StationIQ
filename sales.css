@@ -1,0 +1,111 @@
+
+.sales-page {
+    flex: 1;
+    min-width: 0;
+    padding: 30px 34px;
+}
+
+.sales-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.sales-header h1 {
+    margin: 0 0 8px;
+}
+
+.sales-header p {
+    margin: 0;
+    color: #8792a0;
+}
+
+.sales-header img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.sales-panel {
+    background: white;
+    border: 1px solid #e5e9ee;
+    border-radius: 11px;
+    padding: 24px;
+    margin-bottom: 22px;
+}
+
+.sales-panel h2 {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.sales-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sales-fields label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sales-fields input {
+    width: 100%;
+}
+
+#salesForm button {
+    background: #d52b1e;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 22px;
+}
+
+#salesForm button:hover {
+    background: #b72117;
+}
+
+#salesMessage {
+    font-size: 13px;
+    color: #247b49;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table-wrap table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.table-wrap th,
+.table-wrap td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.table-wrap th {
+    background: #f7f8fa;
+    color: #6c7a8b;
+    font-size: 12px;
+}
+
+.table-wrap td {
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .sales-fields {
+        grid-template-columns: 1fr;
+    }
+}
